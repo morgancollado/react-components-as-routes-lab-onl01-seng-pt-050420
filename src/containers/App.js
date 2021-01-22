@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {
   BrowserRouter as Router,
   Route
@@ -13,7 +13,13 @@ import Movies from '../components/Movies';
 const App = (props) => {
   return (
     <Router>
-      {/*{code here}*/}
+      <Fragment>
+      <NavBar/>
+      <Route exact path='/' component={Home}/>
+      <Route path="/movies" component={Movies}/>
+      <Route path="/directors" component={Directors}/>
+      <Route path="/actors" component={Actors} />
+      </Fragment>
     </Router>
   );
 };
